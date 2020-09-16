@@ -35,29 +35,21 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
+#include "vendor_init.h"
 
-using android::init::property_set;
-
-void property_override(const std::string& name, const std::string& value)
+void property_override(char const prop[], char const value[], bool add = true)
 {
-    size_t valuelen = value.size();
+    auto pi = (prop_info *) __system_property_find(prop);
 
-    prop_info* pi = (prop_info*) __system_property_find(name.c_str());
     if (pi != nullptr) {
-        __system_property_update(pi, value.c_str(), valuelen);
-    }
-    else {
-        int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
-        if (rc < 0) {
-            LOG(ERROR) << "property_set(\"" << name << "\", \"" << value << "\") failed: "
-                       << "__system_property_add failed";
-        }
+        __system_property_update(pi, value, strlen(value));
+    } else if (add) {
+        __system_property_add(prop, strlen(prop), value, strlen(value));
     }
 }
 
-void property_overrride_triple(const std::string& product_prop, const std::string& system_prop, const std::string& vendor_prop, const std::string& value)
+void property_overrride_triple(char const product_prop[], char const system_prop[], char const vendor_prop[], char const value[])
 {
     property_override(product_prop, value);
     property_override(system_prop, value);
