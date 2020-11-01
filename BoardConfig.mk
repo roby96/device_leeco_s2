@@ -100,7 +100,6 @@ MALLOC_SVELTE := true
 BOARD_GLOBAL_CFLAGS += -DDECAY_TIME_DEFAULT=0
 
 # Charger
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(DEVICE_PATH)/charger/images
 BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 BLINK_PATH := "/sys/class/leds/red/blink"
