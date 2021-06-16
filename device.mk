@@ -40,12 +40,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.soundtrigger@2.2-service \
     audio_amplifier.msm8952 \
     audio.a2dp.default \
-    audio.bluetooth.default \
     audio.primary.msm8952 \
     audio.r_submix.default \
     audio.usb.default \
@@ -78,6 +76,13 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
+    vendor.qti.hardware.bluetooth_audio@2.0 \
+    vendor.qti.hardware.btconfigstore@1.0
 
 # Camera
 PRODUCT_PACKAGES += \
