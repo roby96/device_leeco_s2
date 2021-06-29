@@ -51,9 +51,9 @@
     <ctl name="TTY Mode" value="OFF" />
     <!-- <ctl name="HPHL Volume" value="9" /> -->
     <!-- <ctl name="HPHR Volume" value="9" /> -->
-    <ctl name="RX1 Digital Volume" value="88" />
-    <ctl name="RX2 Digital Volume" value="88" />
-    <ctl name="RX3 Digital Volume" value="88" />
+    <ctl name="RX1 Digital Volume" value="94" />
+    <ctl name="RX2 Digital Volume" value="94" />
+    <ctl name="RX3 Digital Volume" value="94" />
     <ctl name="IIR1 INP1 Volume" value="84" />
     <ctl name="IIR1 INP2 Volume" value="84" />
     <ctl name="IIR1 INP3 Volume" value="84" />
@@ -66,11 +66,11 @@
     <ctl name="DEC2 MUX" value="ZERO" />
     <ctl name="DEC1 MUX" value="ZERO" />
     <ctl name="ADC2 MUX" value="ZERO" />
-    <ctl name="RDAC2 MUX" value="ZERO" />
+    <ctl name="RDAC2 MUX" value="RX1" />
     <!-- <ctl name="RX2 MIX2 INP2" value="ZERO" /> -->
     <ctl name="RX2 MIX2 INP1" value="ZERO" />
     <!-- <ctl name="RX1 MIX2 INP2" value="ZERO" /> -->
-    <ctl name="RX1 MIX2 INP1" value="ZERO" />
+    <ctl name="RX1 MIX2 INP1" value="RX1" />
     <ctl name="RX3 MIX1 INP2" value="ZERO" />
     <ctl name="RX3 MIX1 INP1" value="ZERO" />
     <ctl name="RX2 MIX1 INP2" value="ZERO" />
@@ -280,6 +280,7 @@
 
     <path name="deep-buffer-playback smartpa">
         <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <!-- for use with leeco audio hal -->
@@ -329,6 +330,7 @@
 
     <path name="low-latency-playback smartpa">
         <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <!-- for use with leeco audio hal -->
@@ -435,6 +437,7 @@
 
     <path name="compress-offload-playback smartpa">
         <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="1" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <!-- for use with leeco audio hal -->
@@ -1273,18 +1276,27 @@
 
     <path name="speaker">
         <ctl name="Smart PA I2S" value="ENABLE" />
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RDAC2 MUX" value="RX1" />
+        <ctl name="RX1 Digital Volume" value="94" />
+        <ctl name="EAR PA Gain" value="POS_6_DB" />
+        <ctl name="EAR_S" value="Switch" />
+        <ctl name="MI2S_RX Channels" value="Two" />
     </path>
 
     <path name="voip-speaker">
         <path name="speaker" />
     </path>
 
-    <path name="wsa-speaker">
+     <path name="wsa-speaker">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="94" />
         <ctl name="WSA Spk Switch" value="WSA" />
         <!-- <ctl name="SpkrMono WSA_RDAC" value="Switch" /> -->
+        <ctl name="MI2S_RX Channels" value="Two" />
+        <ctl name="EAR PA Gain" value="POS_6_DB" />
+        <ctl name="EAR_S" value="Switch" />
     </path>
 
     <path name="spkr-rx-calib">
@@ -1314,7 +1326,7 @@
     <path name="handset">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="88" />
+        <ctl name="RX1 Digital Volume" value="96" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
     </path>
@@ -1325,7 +1337,7 @@
 
     <path name="handset-mic">
         <path name="adc1" />
-        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="ADC1 Volume" value="7" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
