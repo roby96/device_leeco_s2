@@ -24,6 +24,7 @@ $(call inherit-product, device/leeco/s2/device.mk)
 # Inherit some common Pixel Experience stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_FACE_UNLOCK_SUPPORTED := true
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
