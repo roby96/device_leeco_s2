@@ -21,3 +21,7 @@ allow init hidl_base_hwservice:hwservice_manager add;
 allow init hwservicemanager:binder { call transfer };
 allow init servicemanager:binder { call transfer };
 allow init sysfs_battery_supply:file setattr;
+
+allow init hal_lineage_livedisplay_hwservice:hwservice_manager { add find };
+allow init mm-pp-daemon:unix_stream_socket connectto;
+allow init pps_socket:sock_file write;
