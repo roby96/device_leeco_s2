@@ -172,6 +172,11 @@ wifi.interface=wlan0
 # set cutoff voltage to 3200mV
 ro.cutoff_voltage_mv=3200
 
+# Enable blurs, hidden under dev option
+ro.surface_flinger.supports_background_blur=1
+persist.sys.sf.disable_blurs=1
+ro.sf.blurs_are_expensive=1
+
 # PixelPlusUI OFFICIAL
 ro.ppui.device_name=LeEco Le 2
 ro.ppui.version=3.8
