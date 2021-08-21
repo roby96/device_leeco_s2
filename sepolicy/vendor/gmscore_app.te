@@ -1,3 +1,7 @@
 allow gmscore_app hal_memtrack_hwservice:hwservice_manager find;
 
 binder_call(gmscore_app, hal_memtrack_default)
+
+allow gmscore_app adbd_prop:file { getattr open };
+allow gmscore_app alarm_boot_prop:file { getattr open };
+allow gmscore_app alarm_handled_prop:file { getattr open };
