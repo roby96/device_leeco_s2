@@ -12,3 +12,12 @@ allow init mnt_vendor_file:dir mounton;
 allow init vendor_file:file execute_no_trans;
 
 allow init diag_device:chr_file rw_file_perms;
+
+allow init hal_keymaster_hwservice:hwservice_manager { add find };
+allow init hal_perf_default:binder call;
+allow init hal_perf_hwservice:hwservice_manager find;
+allow init hal_power_service:service_manager add;
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder { call transfer };
+allow init servicemanager:binder { call transfer };
+allow init sysfs_battery_supply:file setattr;
