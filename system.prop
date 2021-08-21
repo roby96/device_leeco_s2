@@ -171,3 +171,10 @@ wifi.interface=wlan0
 
 # set cutoff voltage to 3200mV
 ro.cutoff_voltage_mv=3200
+
+# PixelPlusUI OFFICIAL
+ro.ppui.device_name=LeEco Le 2
+ro.ppui.version=3.8
+ro.ppui.version_code=Hikaru
+ro.ppui.is_official=true
+ro.ppui.maintainer_name=Alonso Jimenez
